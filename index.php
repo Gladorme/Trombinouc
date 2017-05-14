@@ -25,9 +25,9 @@
       </p>
 		</div>
     <div class="connexion">
-      <form id="connexion" action="POST" method="outils/connexion.php">
+      <form id="connexion" action="outils/connexion.ph" method="POST">
         <input type="email" name="email" placeholder="Adresse email" required/>
-        <input type="password" name="password" placeholder="Mot de passe" required/>
+        <input type="password" name="mdp" placeholder="Mot de passe" required/>
         <input type="button" id="connexion"  value="Se connecter" />
       </form>
     </div>
@@ -41,15 +41,20 @@
         Avec Trombinouc, partagez et restez en contact avec votre entourage.
       </p>
       <img src="img/world_people.png" alt="Image qui représente l'entraide">
+      <?php
+        if($_GET['redir']="inscrit"){
+          echo "<p>Vous désormais inscrit, veuillez vous connecter !</p>";
+        }
+       ?>
     </div>
     <div class="droite">
       <div class="inscription">
         <h1>Inscription</h1>
-        <form id="signup" action="POST" method="outils/inscriptions.php">
+        <form id="signup" action="outils/inscriptions.php" method="POST">
           <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required /><br />
           <input type="email" name="email" placeholder="Adresse email" required /><br />
           <input type="text" name="annee" placeholder="Année de naissance" required /><br />
-          <input type="password" name="password" placeholder="Mot de passe" required /><br />
+          <input type="password" name="mdp" placeholder="Mot de passe" required /><br />
           <div class="centrer">
             <input type="checkbox" name="CGU" value="Yes" required /> J'accepte les conditions d'utilisation<br />
             <input type="submit" id="inscription" value="S'inscrire" />
