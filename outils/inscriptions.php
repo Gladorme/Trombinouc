@@ -6,6 +6,29 @@
   }else{
     if($_POST['CGU']=="Yes"){
       include ('../config/bdd.php');
+
+      $sql = "SELECT pseudo FROM utilisateurs WHERE pseudo = :pseudo";
+      $req = $bd->prepare($sql);
+      $marqueurs = array('pseudo'=>$_POST['pseudo']);
+      $req->execute($marqueurs) or die(print_r($res->errorInfo()));
+      $result = $req->fetchall();
+      $req->closeCursor();
+      if(count($result) != 0){
+        header("Location: ../index.php?redir=pseudoused");
+        exit();
+      }
+
+      $sql = "SELECT mail FROM utilisateurs WHERE mail = :email";
+      $req = $bd->prepare($sql);
+      $marqueurs = array('email'=>$_POST['email']);
+      $req->execute($marqueurs) or die(print_r($res->errorInfo()));
+      $result = $req->fetchall();
+      $req->closeCursor();
+      if(count($result) != 0){
+        header("Location: ../index.php?redir=mailused");
+        exit();
+      }
+
       $sql = "INSERT INTO utilisateurs (pseudo, mdp, mail, naissance) VALUES (:pseudo, :mdp, :email, :annee)";
       $req = $bd->prepare($sql);
       $marqueurs = array('pseudo'=>$_POST['pseudo'], 'mdp'=>hash('sha512', htmlspecialchars($_POST['mdp'])), 'email'=>$_POST['email'], 'annee'=> $_POST['annee']);

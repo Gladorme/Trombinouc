@@ -42,9 +42,23 @@
       </p>
       <img src="img/world_people.png" alt="Image qui représente l'entraide">
       <?php
-        if($_GET['redir']="inscrit"){
+      if (isset($_GET['redir'])){
+        if($_GET['redir'] == "inscrit"){
           echo "<p>Vous désormais inscrit, veuillez vous connecter !</p>";
         }
+        if($_GET['redir'] == "errmdp"){
+          echo "<p>Mot de passe incorrect !</p>";
+        }
+        if($_GET['redir'] == "errmail"){
+          echo "<p>Email inconnue, inscrivez vous ! </p>";
+        }
+        if($_GET['redir'] == "pseudoused"){
+          echo "<p>Pseudo déjà utilisé !</p>";
+        }
+        if($_GET['redir'] == "mailused"){
+          echo "<p>Email déjà utilisée ! </p>";
+        }
+      }
        ?>
     </div>
     <div class="droite">
