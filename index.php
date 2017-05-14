@@ -21,7 +21,7 @@
 		<div class="slogan">
 			<img src="img/logo.png" alt="Logo du Trombinouc">
       <p>
-        Trombinouc
+        Le Trombinouc des R&amp;T
       </p>
 		</div>
     <div class="connexion">
