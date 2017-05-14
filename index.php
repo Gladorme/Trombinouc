@@ -25,10 +25,10 @@
       </p>
 		</div>
     <div class="connexion">
-      <form id="connexion" action="outils/connexion.ph" method="POST">
+      <form id="connexion" action="outils/connexions.php" method="POST">
         <input type="email" name="email" placeholder="Adresse email" required/>
         <input type="password" name="mdp" placeholder="Mot de passe" required/>
-        <input type="button" id="connexion"  value="Se connecter" />
+        <input type="submit" id="connexion"  value="Se connecter" />
       </form>
     </div>
 	</header>

@@ -8,7 +8,7 @@
       include ('../config/bdd.php');
       $sql = "INSERT INTO utilisateurs (pseudo, mdp, mail, naissance) VALUES (:pseudo, :mdp, :email, :annee)";
       $req = $bd->prepare($sql);
-      $marqueurs = array('pseudo'=>$_POST['pseudo'], 'mdp'=>password_hash($_POST['mdp'], PASSWORD_BCRYPT), 'email'=>$_POST['email'], 'annee'=> $_POST['annee']);
+      $marqueurs = array('pseudo'=>$_POST['pseudo'], 'mdp'=>hash('sha512', htmlspecialchars($_POST['mdp'])), 'email'=>$_POST['email'], 'annee'=> $_POST['annee']);
       $req->execute($marqueurs);
       $req->closeCursor();
       header("Location: ../index.php?redir=inscrit");
