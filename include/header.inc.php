@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['connect'])){
-    header('Location: ../index.php?redir=noconnect');
+    header('Location: index.php?redir=noconnect');
     exit();
   }
 ?>
@@ -14,6 +14,7 @@
 		<meta name="authors" content="Guillaume LADORME, Kévin SANTACREU, Marwane SHAIM">
 		<meta name="keywords" content="Trombinouc, Mini-Facebook, DUT R&amp;T, Projet PHP">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="icon" type="image/png" href="img/logo.png" />
   </head>
   <body>

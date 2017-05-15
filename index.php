@@ -14,7 +14,8 @@
 		<meta name="authors" content="Guillaume LADORME, Kévin SANTACREU, Marwane SHAIM">
 		<meta name="keywords" content="Trombinouc, Mini-Facebook, DUT R&amp;T, Projet PHP">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="icon" type="image/png" href="img/logo.png" />
  </head>
  <body>
 	<header>
@@ -36,30 +37,44 @@
 
 
   <div class="main">
+    <?php // Apparait uniquement lorsqu'il y a une variable dans l'url
+    if (isset($_GET['redir'])){
+      if($_GET['redir'] == "inscrit"){
+        $msg = "Vous êtes désormais inscrit, veuillez vous connecter !";
+      }
+      elseif($_GET['redir'] == "errmdp"){
+        $msg = "Mot de passe incorrect !";
+      }
+      elseif($_GET['redir'] == "errmail"){
+        $msg = "Email inconnue, veuillez vous inscrire !";
+      }
+      elseif($_GET['redir'] == "pseudoused"){
+        $msg = "Ce pseudo déjà utilisé !";
+      }
+      elseif($_GET['redir'] == "mailused"){
+        $msg = "Cette adresse mail déjà utilisée !";
+      }
+      elseif($_GET['redir'] == "deco"){
+        $msg = "Vous êtes désormais déconnecté !";
+      }
+      elseif($_GET['redir'] == "noconnect"){
+        $msg = "Vous devez être connecté pour afficher cette page !";
+      }else{
+        $msg = "";
+      }
+    echo "<div class='annonces'>\n
+      <i class='fa fa-exclamation-triangle' aria-hidden='true'></i>
+        {$msg}
+      <i class='fa fa-exclamation-triangle' aria-hidden='true'></i>\n
+    </div>\n";
+    }
+    ?>
+
     <div class="gauche">
       <p>
         Avec Trombinouc, partagez et restez en contact avec votre entourage.
       </p>
       <img src="img/world_people.png" alt="Image qui représente l'entraide">
-      <?php
-      if (isset($_GET['redir'])){
-        if($_GET['redir'] == "inscrit"){
-          echo "<p>Vous désormais inscrit, veuillez vous connecter !</p>";
-        }
-        if($_GET['redir'] == "errmdp"){
-          echo "<p>Mot de passe incorrect !</p>";
-        }
-        if($_GET['redir'] == "errmail"){
-          echo "<p>Email inconnue, inscrivez vous ! </p>";
-        }
-        if($_GET['redir'] == "pseudoused"){
-          echo "<p>Pseudo déjà utilisé !</p>";
-        }
-        if($_GET['redir'] == "mailused"){
-          echo "<p>Email déjà utilisée ! </p>";
-        }
-      }
-       ?>
     </div>
     <div class="droite">
       <div class="inscription">

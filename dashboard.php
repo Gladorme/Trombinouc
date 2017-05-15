@@ -1,4 +1,4 @@
-<?php include ('config/header.inc.php'); ?>
+<?php include ('include/header.inc.php'); ?>
 <header>
 	<div class="slogan">
 		<img src="img/logo.png" alt="Logo de Trombinouc">
@@ -52,9 +52,4 @@
     </div>
   </div>
 </div>
-
-
-
-<div class="main">
-</div>
-<?php include ('config/footer.inc.php'); ?>
+<?php include ('include/footer.inc.php'); ?>
