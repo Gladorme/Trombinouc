@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 14 Mai 2017 à 14:41
+-- Généré le :  Mar 16 Mai 2017 à 19:04
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `publications` (
   `id_publication` int(10) UNSIGNED NOT NULL,
-  `date` timestamp NOT NULL,
+  `utilisateur_id` int(11) NOT NULL,
+  `date` int(10) UNSIGNED NOT NULL,
   `message` text NOT NULL,
   `rep_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -80,7 +81,9 @@ ALTER TABLE `relations`
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`id_utilisateur`);
+  ADD PRIMARY KEY (`id_utilisateur`),
+  ADD UNIQUE KEY `pseudo` (`pseudo`),
+  ADD UNIQUE KEY `mail` (`mail`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -90,7 +93,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `publications`
 --
 ALTER TABLE `publications`
-  MODIFY `id_publication` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_publication` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `relations`
 --
@@ -100,7 +103,7 @@ ALTER TABLE `relations`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id_utilisateur` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_utilisateur` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -23,7 +23,7 @@
         $req->closeCursor();
 
         session_start();
-        $_SESSION['id'] = $result[0]['id'];
+        $_SESSION['id'] = $result[0]['id_utilisateur'];
         $_SESSION['pseudo'] = $result[0]['pseudo'];
         $_SESSION['mail'] = $result[0]['mail'];
         $_SESSION['naissance'] = $result[0]['naissance'];
