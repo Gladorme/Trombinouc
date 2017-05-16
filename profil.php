@@ -32,6 +32,11 @@
 	</form>
 </div>
 <div class="forum">
-	<?php	load_msg();	?>
+	<?php
+    if(!isset($_GET['pseudo'])){
+      $_GET['pseudo'] = $_SESSION['pseudo'];
+    }
+    load_msg($_GET['pseudo']);
+  ?>
 </div>
 <?php include ('include/footer.inc.php'); ?>
