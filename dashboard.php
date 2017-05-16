@@ -1,7 +1,8 @@
 <?php include ('include/header.inc.php'); ?>
+<?php include ('include/load_msg.php'); ?>
 <header>
 	<div class="slogan">
-		<img src="img/logo.png" alt="Logo de Trombinouc">
+		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
     <p>
       Le Trombinouc des R&amp;T
     </p>
@@ -18,38 +19,27 @@
     <li><a href="http://ent.unice.fr">Accès ENT</a></li>
     <li><a href="http://jalon.unice.fr">Accès Jalon</a></li>
     <li><a href="http://iutsa.unice.fr/gpushow2/?dept=RT&interactive">Planning des cours</a></li>
+		<?php echo "<li><a href='dashboard.php?user={$_SESSION['pseudo']}'>Profil</a></li>"; ?>
+		<li><a href="options.php">Paramètres</a></li>
   </ul>
 </nav>
-<div class="annonces">
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-  Pas cours jusqu'à la fin de l'année
-  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+<div class="publier">
+  <form id="publication">
+		<textarea name="message" placeholder=" Exprimez-vous ..." required></textarea><br />
+		<input type="submit" id="publication" value="Publier !"/>
+	</form>
 </div>
 <div class="forum">
-  <div class="categorie">
-    <div class="titre">
-      Général
-    </div>
-    <div class="sujet">
-      &bull; <a href="sujet_general.html">Discussions générales</a>
-    </div>
-  </div>
-  <div class="categorie">
-    <div class="titre">
-      Cours
-    </div>
-    <div class="sujet">
-      &bull; <a href="#">Semestre 1</a>
-    </div>
-    <div class="sujet">
-      &bull; <a href="#">Semestre 2</a>
-    </div>
-    <div class="sujet">
-      &bull; <a href="#">Semestre 3</a>
-    </div>
-    <div class="sujet">
-      &bull; <a href="#">Semestre 4</a>
-    </div>
-  </div>
+	<?php	load_msg();	?>
+	<div class="answer">
+		<div class="auteur">
+			<img src="img/logo.png" alt="George" />
+			<p>George</p>
+		</div>
+		<div class="texte">
+			Bonjour à tous ! Je souhaiterai où je pourrais trouver les coefficients de chaque matière ! <br />
+			Merci d'avance !
+		</div>
+	</div>
 </div>
 <?php include ('include/footer.inc.php'); ?>

@@ -10,7 +10,7 @@
       $sql = "SELECT pseudo FROM utilisateurs WHERE pseudo = :pseudo";
       $req = $bd->prepare($sql);
       $marqueurs = array('pseudo'=>$_POST['pseudo']);
-      $req->execute($marqueurs) or die(print_r($res->errorInfo()));
+      $req->execute($marqueurs);
       $result = $req->fetchall();
       $req->closeCursor();
       if(count($result) != 0){
@@ -21,7 +21,7 @@
       $sql = "SELECT mail FROM utilisateurs WHERE mail = :email";
       $req = $bd->prepare($sql);
       $marqueurs = array('email'=>$_POST['email']);
-      $req->execute($marqueurs) or die(print_r($res->errorInfo()));
+      $req->execute($marqueurs);
       $result = $req->fetchall();
       $req->closeCursor();
       if(count($result) != 0){

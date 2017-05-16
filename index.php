@@ -20,7 +20,7 @@
  <body>
 	<header>
 		<div class="slogan">
-			<img src="img/logo.png" alt="Logo du Trombinouc">
+			<a href="index.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
       <p>
         Le Trombinouc des R&amp;T
       </p>
