@@ -1,5 +1,5 @@
 <?php include ('include/header.inc.php'); ?>
-<?php include ('include/load_msg.php'); ?>
+<?php include ('outils/load_msg.php'); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -8,10 +8,12 @@
     </p>
 	</div>
   <div class="connexion">
-    <form>
-      <input type="text" name="search" placeholder="Rechercher !"/>
-      <input type="button"  value="Se déconnecter" onclick="parent.location='deconnexion.php'"/>
+    <form id="rechercher">
+      <input type="text" name="search" placeholder="Pseudo"/>
+			<input type="submit" id="rechercher" value="Rechercher"/>
+			<input type="button" value="Se déconnecter" onclick="parent.location='deconnexion.php'"/>
     </form>
+
   </div>
 </header>
 <nav>
@@ -24,7 +26,7 @@
   </ul>
 </nav>
 <div class="publier">
-  <form id="publication">
+  <form id="publication" action="outils/publier.php" method="POST">
 		<textarea name="message" placeholder=" Exprimez-vous ..." required></textarea><br />
 		<input type="submit" id="publication" value="Publier !"/>
 	</form>
