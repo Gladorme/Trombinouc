@@ -1,6 +1,6 @@
 <?php
   if(!isset($_GET['pseudo'])){
-    header("Location: ../dashboard.php?redir='null'");
+    header("Location: ../dashboard.php?redir=unknowpseudo");
     exit();
   }
   include ("check_pseudo.php");

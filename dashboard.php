@@ -32,21 +32,6 @@
 		}
 		elseif($_GET['redir'] == "unknowpseudo"){
 			$msg = "Pseudo inconnu !";
-		}
-		elseif($_GET['redir'] == "errmail"){
-			$msg = "Email inconnue, veuillez vous inscrire !";
-		}
-		elseif($_GET['redir'] == "pseudoused"){
-			$msg = "Ce pseudo déjà utilisé !";
-		}
-		elseif($_GET['redir'] == "mailused"){
-			$msg = "Cette adresse mail déjà utilisée !";
-		}
-		elseif($_GET['redir'] == "deco"){
-			$msg = "Vous êtes désormais déconnecté !";
-		}
-		elseif($_GET['redir'] == "noconnect"){
-			$msg = "Vous devez être connecté pour afficher cette page !";
 		}else{
 			$msg = "";
 		}

@@ -40,6 +40,11 @@
 	$fav = get_nbr_favoris($_GET['pseudo']);
 	$age = get_age($_GET['pseudo']);
 	$publi = get_nbr_publications($_GET['pseudo']);
+	if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
+		$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des ami</li>";
+	}else{
+		$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Rajouter en amis</li>";
+	}
 	echo "
   <div class='utilisateur'>
 		<img src='{$img}' alt='Avatar de {$_GET['pseudo']}' />
@@ -51,6 +56,7 @@
 			<li><i class='fa fa-star' aria-hidden='true'></i> {$fav} Favoris</li>
 			<li><i class='fa fa-birthday-cake' aria-hidden='true'></i> {$age} ans</li>
 			<li><i class='fa fa-comments-o' aria-hidden='true'></i> {$publi} publications</li>
+			{$action}
 		</ul>
 	</div>";
 	?>
