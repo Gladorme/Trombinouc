@@ -3,7 +3,7 @@
     header('Location: dashboard.php');
     exit();
   }
-  if (strlen($_POST['message']) > 500) {
+  if (strlen($_POST['message']) > 502) {
     header("Location: ../dashboard.php?redir=msgsize");
     exit();
   }

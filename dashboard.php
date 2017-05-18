@@ -59,11 +59,13 @@
 ?>
 <div class="publier">
   <form id="publication" action="outils/publier.php" method="POST">
-		<textarea name="message" placeholder=" Exprimez-vous ..." required></textarea><br />
+		<textarea name="message" id="textarea" placeholder=" Exprimez-vous ..." required></textarea> <em id="count">500</em>
+		<br />
 		<input type="submit" id="publication" value="Publier !"/>
 	</form>
 </div>
 <div class="forum">
 	<?php	load_msg();	?>
 </div>
+<script src="js/count.js"></script>
 <?php include ('include/footer.inc.php'); ?>

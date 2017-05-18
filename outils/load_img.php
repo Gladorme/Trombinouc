@@ -9,7 +9,7 @@ function load_img($pseudo){
   if (isset($result[0]['img'])){
       return $result[0]['img'];
   }else{
-    return 'img/logo.png'
+    return 'img/logo.png';
   }
 }
  ?>
