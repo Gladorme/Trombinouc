@@ -8,7 +8,7 @@
     exit();
   }
   session_start();
-  include ('../config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "INSERT INTO publications (utilisateur_id, date, message) VALUES (:id_utilisateur, :date, :message)";
   $req = $bd->prepare($sql);
   $marqueurs = array('id_utilisateur'=>$_SESSION['id'], 'date'=>time(), 'message'=>htmlspecialchars($_POST['message']));

@@ -1,6 +1,6 @@
 <?php
   function load_msg($pseudo = 'everybody'){
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT id_publication, pseudo, message, img FROM utilisateurs, publications WHERE id_utilisateur = utilisateur_id ORDER BY id_publication DESC";
   $req = $bd->prepare($sql);
   $req->execute();

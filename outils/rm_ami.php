@@ -4,8 +4,8 @@
     exit();
   }
 
-  include ('../config/bdd.php');
-  include ('get_infos.php');
+  include (__DIR__ .'/../config/bdd.php');
+  include (__DIR__ .'/get_infos.php');
 
   session_start();
   $id_ami = get_id($_GET['pseudo']);

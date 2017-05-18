@@ -1,8 +1,7 @@
-<?php include ('include/header.inc.php'); ?>
-<?php include ('outils/load_msg.php'); ?>
-<?php include ('outils/load_img.php'); ?>
-<?php include ('outils/get_infos.php'); ?>
-<?php error_reporting(E_ERROR); ?>
+<?php include (__DIR__ .'/include/header.inc.php'); ?>
+<?php include (__DIR__ .'/outils/load_msg.php'); ?>
+<?php include (__DIR__ .'/outils/load_img.php'); ?>
+<?php include (__DIR__ .'/outils/get_infos.php'); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -26,8 +25,8 @@
 ?>
 <nav>
   <ul>
+		<li><a href="dashboard.php">Dashboard</a></li>
     <li><a href="http://ent.unice.fr">Accès ENT</a></li>
-    <li><a href="http://jalon.unice.fr">Accès Jalon</a></li>
     <li><a href="http://iutsa.unice.fr/gpushow2/?dept=RT&interactive">Planning des cours</a></li>
 		<?php echo "<li><a href='profil.php?pseudo={$_SESSION['pseudo']}'>Profil</a></li>"; ?>
 		<li><a href="options.php">Paramètres</a></li>
@@ -44,7 +43,7 @@
 	if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
 		$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</li>";
 	}else{
-		$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Rajouter en amis</li>";
+		$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Rajouter en ami</li>";
 	}
 	echo "
   <div class='utilisateur'>

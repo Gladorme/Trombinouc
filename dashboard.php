@@ -1,5 +1,5 @@
-<?php include ('include/header.inc.php'); ?>
-<?php include ('outils/load_msg.php'); ?>
+<?php include (__DIR__ .'/include/header.inc.php'); ?>
+<?php include (__DIR__ .'/outils/load_msg.php'); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -18,8 +18,8 @@
 </header>
 <nav>
   <ul>
+		<li><a href="dashboard.php">Dashboard</a></li>
     <li><a href="http://ent.unice.fr">Accès ENT</a></li>
-    <li><a href="http://jalon.unice.fr">Accès Jalon</a></li>
     <li><a href="http://iutsa.unice.fr/gpushow2/?dept=RT&interactive">Planning des cours</a></li>
 		<?php echo "<li><a href='profil.php?pseudo={$_SESSION['pseudo']}'>Profil</a></li>"; ?>
 		<li><a href="options.php">Paramètres</a></li>

@@ -1,6 +1,6 @@
 <?php
 function get_nbr_amis($pseudo){
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT utilisateur_id FROM relations, utilisateurs WHERE pseudo = :pseudo";
   $req = $bd->prepare($sql);
   $marqueurs = array('pseudo' => $pseudo);
@@ -15,7 +15,7 @@ function get_nbr_favoris($pseudo){
 }
 
 function get_age($pseudo){
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT naissance FROM utilisateurs WHERE pseudo = :pseudo";
   $req = $bd->prepare($sql);
   $marqueurs = array('pseudo' => $pseudo);
@@ -27,7 +27,7 @@ function get_age($pseudo){
 }
 
 function get_nbr_publications($pseudo){
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT utilisateur_id FROM publications, utilisateurs WHERE pseudo = :pseudo AND utilisateur_id = id_utilisateur";
   $req = $bd->prepare($sql);
   $marqueurs = array('pseudo' => $pseudo);
@@ -38,8 +38,7 @@ function get_nbr_publications($pseudo){
 }
 
 function get_id($pseudo){
-  include ('../config/bdd.php');
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT id_utilisateur FROM utilisateurs WHERE pseudo = :pseudo";
   $req = $bd->prepare($sql);
   $marqueurs = array('pseudo' => $pseudo);
@@ -50,7 +49,7 @@ function get_id($pseudo){
 }
 
 function check_relation($pseudo, $pseudo_ami){
-  include ('config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
 
   $id = get_id($pseudo);
   $id_ami = get_id($pseudo_ami);

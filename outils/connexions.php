@@ -3,7 +3,7 @@
     header('Location: ../index.php?redir=errconnect');
     exit();
   }else{
-    include ('../config/bdd.php');
+  include (__DIR__ .'/../config/bdd.php');
     $sql = "SELECT mdp FROM utilisateurs WHERE mail = :email";
     $req = $bd->prepare($sql);
     $marqueurs = array('email'=>$_POST['email']);
