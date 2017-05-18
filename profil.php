@@ -2,6 +2,7 @@
 <?php include ('outils/load_msg.php'); ?>
 <?php include ('outils/load_img.php'); ?>
 <?php include ('outils/get_infos.php'); ?>
+<?php error_reporting(E_ERROR); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -41,7 +42,7 @@
 	$age = get_age($_GET['pseudo']);
 	$publi = get_nbr_publications($_GET['pseudo']);
 	if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
-		$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des ami</li>";
+		$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</li>";
 	}else{
 		$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Rajouter en amis</li>";
 	}
