@@ -8,8 +8,8 @@
     </p>
 	</div>
   <div class="connexion">
-    <form id="rechercher">
-      <input type="text" name="search" placeholder="Pseudo"/>
+		<form id="rechercher" action="outils/rechercher.php" method="GET">
+      <input type="text" name="pseudo" placeholder="Pseudo"/>
 			<input type="submit" id="rechercher" value="Rechercher"/>
 			<input type="button" value="Se déconnecter" onclick="parent.location='deconnexion.php'"/>
     </form>

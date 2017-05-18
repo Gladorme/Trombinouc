@@ -6,6 +6,10 @@ function load_img($pseudo){
   $req->execute($marqueurs);
   $result = $req->fetchall();
   $req->closeCursor();
-  return $result[0]['img'];
+  if (isset($result[0]['img'])){
+      return $result[0]['img'];
+  }else{
+    return 'img/logo.png'
+  }
 }
  ?>

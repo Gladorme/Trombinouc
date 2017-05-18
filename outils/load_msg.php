@@ -20,8 +20,8 @@
           echo "
           <div class='answer'>\n
               <div class='auteur'>\n
-                <img src='{$value['img']}' alt='{$value['pseudo']}' />\n
-                <p>{$value['pseudo']}</p>\n
+                <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
+                <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
               </div>\n
               <div class='texte'>\n
                 {$value['message']}
@@ -31,8 +31,8 @@
           echo "
           <div class='answer'>\n
               <div class='auteur'>\n
-                <img src='img/logo.png' alt='{$value['pseudo']}' />\n
-                <p>{$value['pseudo']}</p>\n
+                <a href='profil.php?pseudo={$value['pseudo']}'><img src='img/logo.png' alt='{$value['pseudo']}' /></a>\n
+                <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
               </div>\n
               <div class='texte'>\n
                 {$value['message']}
@@ -45,8 +45,8 @@
              echo "
              <div class='answer'>\n
                  <div class='auteur'>\n
-                   <img src='{$value['img']}' alt='{$value['pseudo']}' />\n
-                   <p>{$value['pseudo']}</p>\n
+                   <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
+                   <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
                  </div>\n
                  <div class='texte'>\n
                    {$value['message']}
@@ -56,8 +56,8 @@
              echo "
              <div class='answer'>\n
                  <div class='auteur'>\n
-                   <img src='img/logo.png' alt='{$value['pseudo']}' />\n
-                   <p>{$value['pseudo']}</p>\n
+                   <a href='profil.php?pseudo={$value['pseudo']}'><img src='img/logo.png' alt='{$value['pseudo']}' /></a>\n
+                   <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
                  </div>\n
                  <div class='texte'>\n
                    {$value['message']}
