@@ -20,7 +20,7 @@
           echo "
           <div class='answer'>\n
               <div class='auteur'>\n
-                <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
+                <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='Avatar de {$value['pseudo']}' /></a>\n
                 <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
               </div>\n
               <div class='texte'>\n

@@ -1,5 +1,7 @@
 <?php include ('include/header.inc.php'); ?>
 <?php include ('outils/load_msg.php'); ?>
+<?php include ('outils/load_img.php'); ?>
+<?php include ('outils/get_infos.php'); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -16,6 +18,11 @@
 
   </div>
 </header>
+<?php
+	if(!isset($_GET['pseudo'])){
+		$_GET['pseudo'] = $_SESSION['pseudo'];
+	}
+?>
 <nav>
   <ul>
     <li><a href="http://ent.unice.fr">Accès ENT</a></li>
@@ -25,17 +32,32 @@
 		<li><a href="options.php">Paramètres</a></li>
   </ul>
 </nav>
-<div class="publier">
-  <form id="publication" action="outils/publier.php" method="POST">
-		<textarea name="message" placeholder=" Exprimez-vous ..." required></textarea><br />
-		<input type="submit" id="publication" value="Publier !"/>
-	</form>
+
+<div class='profil'>
+	<?php
+	$img = load_img($_GET['pseudo']);
+	$amis = get_nbr_amis($_GET['pseudo']);
+	$fav = get_nbr_favoris($_GET['pseudo']);
+	$age = get_age($_GET['pseudo']);
+	$publi = get_nbr_publications($_GET['pseudo']);
+	echo "
+  <div class='utilisateur'>
+		<img src='{$img}' alt='Avatar de {$_GET['pseudo']}' />
+		<p>{$_GET['pseudo']}</p>
+	</div>
+	<div class='stats'>
+		<ul>
+			<li><i class='fa fa-users' aria-hidden='true'></i> {$amis} Amis</li>
+			<li><i class='fa fa-star' aria-hidden='true'></i> {$fav} Favoris</li>
+			<li><i class='fa fa-birthday-cake' aria-hidden='true'></i> {$age} ans</li>
+			<li><i class='fa fa-comments-o' aria-hidden='true'></i> {$publi} publications</li>
+		</ul>
+	</div>";
+	?>
 </div>
+
 <div class="forum">
 	<?php
-    if(!isset($_GET['pseudo'])){
-      $_GET['pseudo'] = $_SESSION['pseudo'];
-    }
     load_msg($_GET['pseudo']);
   ?>
 </div>
