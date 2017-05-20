@@ -74,12 +74,12 @@
   load_rep($_GET['id']);
  ?>
 </div>
-<div class="repondre">
-  <form id="repondre" action="outils/repondre.php" method="POST">
+<div class="repondre" id="rep">
+  <form id="rep" action="outils/repondre.php" method="POST">
 		<textarea name="message" id="textarea" placeholder=" Exprimez-vous ..." required></textarea> <em id="count">500</em>
     <?php echo "<input type='text' hidden='true' name='id_pub' value='{$_GET['id']}'/>"; ?>
 		<br />
-		<input type="submit" id="publication" value="Publier !"/>
+		<input type="submit" id="rep" value="Publier !"/>
 	</form>
 </div>
 <script src="js/count.js"></script>

@@ -35,6 +35,9 @@
 		}
 		elseif($_GET['redir'] == "unknowidpub"){
 			$msg = "Publication inconnue !";
+		}
+		elseif($_GET['redir'] == "rmpubsuccess"){
+			$msg = "Publication supprimée !";
 		}else{
 			$msg = "";
 		}
