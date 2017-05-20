@@ -16,7 +16,7 @@
     </div>\n";
   }else{
     foreach ($result as $key => $value) {
-      if($value['rep_id'] != "NULL"){
+      if(empty($value['rep_id'])){
         if($pseudo == 'everybody'){
           $rep = get_nbr_rep($value['id_publication']);
           echo "
