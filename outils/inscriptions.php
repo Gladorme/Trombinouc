@@ -29,9 +29,9 @@
         exit();
       }
 
-      $sql = "INSERT INTO utilisateurs (pseudo, mdp, mail, naissance) VALUES (:pseudo, :mdp, :email, :annee)";
+      $sql = "INSERT INTO utilisateurs (pseudo, mdp, mail, naissance, img) VALUES (:pseudo, :mdp, :email, :annee, :img)";
       $req = $bd->prepare($sql);
-      $marqueurs = array('pseudo'=>$_POST['pseudo'], 'mdp'=>hash('sha512', htmlspecialchars($_POST['mdp'])), 'email'=>$_POST['email'], 'annee'=> $_POST['annee']);
+      $marqueurs = array('pseudo'=>htmlspecialchars($_POST['pseudo']), 'mdp'=>hash('sha512', htmlspecialchars($_POST['mdp'])), 'email'=>$_POST['email'], 'annee'=> $_POST['annee'], 'img'=>'img/logo.png');
       $req->execute($marqueurs);
       $req->closeCursor();
       header("Location: ../index.php?redir=inscrit");

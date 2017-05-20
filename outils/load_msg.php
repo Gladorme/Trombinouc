@@ -1,6 +1,7 @@
 <?php
   function load_msg($pseudo = 'everybody'){
   include (__DIR__ .'/../config/bdd.php');
+  include (__DIR__ .'/get_infos_rep.php');
   $sql = "SELECT id_publication, pseudo, message, img FROM utilisateurs, publications WHERE id_utilisateur = utilisateur_id ORDER BY id_publication DESC";
   $req = $bd->prepare($sql);
   $req->execute();
@@ -16,54 +17,42 @@
   }else{
     foreach ($result as $key => $value) {
       if($pseudo == 'everybody'){
-       if (isset($value['img'])){
-          echo "
-          <div class='answer'>\n
-              <div class='auteur'>\n
-                <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='Avatar de {$value['pseudo']}' /></a>\n
-                <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
-              </div>\n
-              <div class='texte'>\n
-                {$value['message']}
-              </div>
-            </div>";
-        }else{
-          echo "
-          <div class='answer'>\n
-              <div class='auteur'>\n
-                <a href='profil.php?pseudo={$value['pseudo']}'><img src='img/logo.png' alt='{$value['pseudo']}' /></a>\n
-                <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
-              </div>\n
-              <div class='texte'>\n
-                {$value['message']}
-              </div>
-            </div>";
-        }
+        $rep = get_nbr_rep($value['id_publication']);
+        echo "
+        <div class='answer'>\n
+            <div class='auteur'>\n
+              <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
+              <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
+            </div>\n
+            <div class='texte'>\n
+              {$value['message']}
+            </div>
+            <div class='actions'>
+              <ul>
+                <li><a href='publication.php?id={$value['id_publication']}'><i class='fa fa-comments' aria-hidden='true'></i> {$rep} commentaires</a></li>
+                <li><a href='publication.php?id={$value['id_publication']}#rep'><i class='fa fa-share' aria-hidden='true'></i> Répondre</a></li>
+              </ul>
+            </div>
+          </div>";
       }else{
         if($value['pseudo'] == $pseudo){
-          if (isset($value['img'])){
-             echo "
-             <div class='answer'>\n
-                 <div class='auteur'>\n
-                   <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
-                   <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
-                 </div>\n
-                 <div class='texte'>\n
-                   {$value['message']}
-                 </div>
-               </div>";
-           }else{
-             echo "
-             <div class='answer'>\n
-                 <div class='auteur'>\n
-                   <a href='profil.php?pseudo={$value['pseudo']}'><img src='img/logo.png' alt='{$value['pseudo']}' /></a>\n
-                   <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
-                 </div>\n
-                 <div class='texte'>\n
-                   {$value['message']}
-                 </div>
-               </div>";
-          }
+          $rep = get_nbr_rep($value['id_publication']);
+          echo "
+          <div class='answer'>\n
+              <div class='auteur'>\n
+                <a href='profil.php?pseudo={$value['pseudo']}'><img src='{$value['img']}' alt='{$value['pseudo']}' /></a>\n
+                <p><a href='profil.php?pseudo={$value['pseudo']}'>{$value['pseudo']}</a></p>\n
+              </div>\n
+              <div class='texte'>\n
+                {$value['message']}
+              </div>
+              <div class='actions'>
+                <ul>
+                  <li><a href='publication.php?id={$value['id_publication']}'><i class='fa fa-comments' aria-hidden='true'></i> {$rep} commentaires</a></li>
+                  <li><a href='publication.php?id={$value['id_publication']}#rep'><i class='fa fa-share' aria-hidden='true'></i> Répondre</a></li>
+                </ul>
+              </div>
+            </div>";
         }
       }
     }

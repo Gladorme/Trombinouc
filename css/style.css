@@ -179,6 +179,7 @@ nav li:hover {
   margin-top: 25px;
   margin-right: 25px;
   margin-left: 25px;
+  height: 60%
 }
 
 .profil {
@@ -209,6 +210,35 @@ nav li:hover {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+.answer .actions ul {
+  text-align: center;
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-right: 60px;
+}
+.answer .actions li {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.answer .actions li:first-of-type {
+  padding-right: 5px;
+}
+.answer .actions li:last-of-type {
+  padding-left: 10px;
+}
+.actions a:link {
+  text-decoration: none;
+  color: #6666ff;
+}
+.actions a:visited {
+    color: black;
+}
+.actions a:hover {
+    color: #4848B3;
 }
 footer {
   margin-top: 15px;

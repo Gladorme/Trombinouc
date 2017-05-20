@@ -1,9 +1,10 @@
 <?php
 function get_nbr_amis($pseudo){
   include (__DIR__ .'/../config/bdd.php');
-  $sql = "SELECT utilisateur_id FROM relations, utilisateurs WHERE pseudo = :pseudo";
+  $id_pseudo = get_id($pseudo);
+  $sql = "SELECT id_relation FROM relations WHERE utilisateur_id = :id_pseudo";
   $req = $bd->prepare($sql);
-  $marqueurs = array('pseudo' => $pseudo);
+  $marqueurs = array('id_pseudo' => $id_pseudo);
   $req->execute($marqueurs);
   $result = $req->fetchall();
   $req->closeCursor();
@@ -67,4 +68,15 @@ function check_relation($pseudo, $pseudo_ami){
     return True;
   }
 }
+/*
+function get_nbr_rep($id_publication){
+  include (__DIR__ .'/../config/bdd.php');
+  $sql = "SELECT id_publication FROM publications WHERE rep_id = :id_publication";
+  $req = $bd->prepare($sql);
+  $marqueurs = array('id_publication' => $id_publication);
+  $req->execute($marqueurs);
+  $result = $req->fetchall();
+  $req->closeCursor();
+  return count($result);
+}*/
 ?>

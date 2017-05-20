@@ -32,6 +32,9 @@
 		}
 		elseif($_GET['redir'] == "unknowpseudo"){
 			$msg = "Pseudo inconnu !";
+		}
+		elseif($_GET['redir'] == "unknowidpub"){
+			$msg = "Publication inconnue !";
 		}else{
 			$msg = "";
 		}
