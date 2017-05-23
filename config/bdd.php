@@ -1,4 +1,5 @@
 <?php
+// Connexion à la base de donnée
 try {
   $bd = new PDO("mysql:host=localhost;dbname=trombinouc","root","");
   $bd->exec('SET NAMES utf8');

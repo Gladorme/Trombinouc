@@ -42,9 +42,9 @@
 	$publi = get_nbr_publications($_GET['pseudo']);
 	if ($_GET['pseudo'] != $_SESSION['pseudo']){
 		if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
-			$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</li>";
+			$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</a></li>";
 		}else{
-			$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Ajouter en ami</li>";
+			$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Ajouter en ami</a></li>";
 		}
 	}else{
 		$action = "";
@@ -69,7 +69,15 @@
 
 <div class="forum">
 	<?php
-    load_msg($_GET['pseudo']);
+	if(get_nbr_publications($_GET['pseudo']) == 0){
+		echo "<div class='annonces'>\n
+			<i class='fa fa-exclamation-triangle' aria-hidden='true'></i>
+				Il n'y aucun message publié
+			<i class='fa fa-exclamation-triangle' aria-hidden='true'></i>\n
+		</div>\n";
+	}else{
+		load_msg($_GET['pseudo']);
+	}
   ?>
 </div>
 <?php include ('include/footer.inc.php'); ?>
