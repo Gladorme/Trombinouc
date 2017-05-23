@@ -40,10 +40,14 @@
 	$fav = get_nbr_favoris($_GET['pseudo']);
 	$age = get_age($_GET['pseudo']);
 	$publi = get_nbr_publications($_GET['pseudo']);
-	if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
-		$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</li>";
+	if ($_GET['pseudo'] != $_SESSION['pseudo']){
+		if (check_relation($_SESSION['pseudo'], $_GET['pseudo'])){
+			$action = "<li><a href='outils/rm_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-times' aria-hidden='true'></i> Supprimer des amis</li>";
+		}else{
+			$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Ajouter en ami</li>";
+		}
 	}else{
-		$action = "<li><a href='outils/add_ami.php?pseudo={$_GET['pseudo']}'><i class='fa fa-plus' aria-hidden='true'></i> Rajouter en ami</li>";
+		$action = "";
 	}
 
 	echo "

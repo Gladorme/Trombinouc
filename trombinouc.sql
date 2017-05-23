@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 16 Mai 2017 à 19:04
+-- Généré le :  Mar 23 Mai 2017 à 08:24
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -42,8 +42,8 @@ CREATE TABLE `publications` (
 
 CREATE TABLE `relations` (
   `id_relation` int(10) UNSIGNED NOT NULL,
-  `_utilisateur_id` int(10) UNSIGNED NOT NULL,
-  `_ami_id` int(10) UNSIGNED NOT NULL
+  `utilisateur_id` int(10) UNSIGNED NOT NULL,
+  `ami_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -93,17 +93,17 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `publications`
 --
 ALTER TABLE `publications`
-  MODIFY `id_publication` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_publication` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT pour la table `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id_relation` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_relation` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id_utilisateur` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_utilisateur` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
