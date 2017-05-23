@@ -32,7 +32,17 @@
 		<li><a href="options.php">Paramètres</a></li>
   </ul>
 </nav>
-
+<?php
+  if (isset($_GET['redir'])){
+    if($_GET['redir'] == "msgsize"){
+      echo "<div class='annonces'>\n
+        <i class='fa fa-exclamation-triangle' aria-hidden='true'></i>
+          Votre message fait plus de 500 caractères !
+        <i class='fa fa-exclamation-triangle' aria-hidden='true'></i>\n
+      </div>\n";
+    }
+  }
+?>
 <div class="forum">
 <?php
   include (__DIR__ .'/config/bdd.php');
