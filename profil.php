@@ -1,7 +1,8 @@
 <?php include (__DIR__ .'/include/header.inc.php'); ?>
 <?php include (__DIR__ .'/outils/load_msg.php'); ?>
 <?php include (__DIR__ .'/outils/load_img.php'); ?>
-<?php include_once (__DIR__ .'/outils/get_infos.php'); ?>
+<?php include (__DIR__ .'/outils/get_infos.php'); ?>
+<?php include (__DIR__ .'/outils/verif_pseudo.php'); ?>
 <header>
 	<div class="slogan">
 		<a href="dashboard.php"><img src="img/logo.png" alt="Logo du Trombinouc"></a>
@@ -19,7 +20,10 @@
   </div>
 </header>
 <?php
-	if(!isset($_GET['pseudo'])){
+	if (!isset($_GET['pseudo'])){
+		$_GET['pseudo'] = $_SESSION['pseudo'];
+	}
+	if (verif_pseudo($_GET['pseudo']) == "Unknow"){
 		$_GET['pseudo'] = $_SESSION['pseudo'];
 	}
 ?>
