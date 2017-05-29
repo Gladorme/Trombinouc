@@ -26,23 +26,23 @@
 </nav>
 
 <div class='options'>
-  <form id="pseudo" action="outils/modif_profil.php" method="POST">
-    <label for="pseudo">Changer son pseudo: </label>
-    <input type="text" name="pseudo" placeholder="Nom d'utilisateur" /><br />
+  <form id="pseudo" action="outils/modif_pseudo.php" method="POST">
+    <label>Changer son pseudo: </label>
+    <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required /><br />
     <input type="submit" id="pseudo" value="Modifier son pseudo" />
   </form>
-  <form id="email" action="outils/modif_profil.php" method="POST">
-    <label for="email">Changer son email: </label>
-    <input type="email" name="email" placeholder="Adresse email" /><br />
+  <form id="email" action="outils/modif_email.php" method="POST">
+    <label>Changer son email: </label>
+    <input type="email" name="email" placeholder="Adresse email" required /><br />
     <input type="submit" id="email" value="Modifier son email" />
   </form>
-  <form id="annee" action="outils/modif_profil.php" method="POST">
-    <label for="annee">Changer sa date de naissance: </label>
-    <input type="text" name="annee" placeholder="Année de naissance" /><br />
+  <form id="annee" action="outils/modif_annee.php" method="POST">
+    <label>Changer sa date de naissance: </label>
+    <input type="text" name="annee" placeholder="Année de naissance" required /><br />
     <input type="submit" id="annee" value="Modifier son année de naissance" />
   </form>
-  <form id="mdp" action="outils/inscriptions.php" method="POST">
-    <label for="mdp">Changer son mot de passe: </label>
+  <form id="mdp" action="outils/modif_mdp.php" method="POST">
+    <label>Changer son mot de passe: </label>
     <input type="password" name="oldmdp" placeholder="Ancien mot de passe" required /><br />
     <input type="password" name="newmdp" placeholder="Nouveau mot de passe" required /><br />
     <input type="submit" id="mdp" value="Modifier son mot de passe" />
