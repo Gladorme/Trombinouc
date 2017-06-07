@@ -79,15 +79,13 @@
     <div class="droite">
       <div class="inscription">
         <h1>Inscription</h1>
-        <form id="signup" action="outils/inscriptions.php" method="POST">
+        <form id="inscription" action="outils/inscriptions.php" method="POST">
           <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required /><br />
           <input type="email" name="email" placeholder="Adresse email" required /><br />
           <input type="text" name="annee" placeholder="Année de naissance" required /><br />
           <input type="password" name="mdp" placeholder="Mot de passe" required /><br />
-          <div class="centrer">
             <input type="checkbox" name="CGU" value="Yes" required /> J'accepte les conditions d'utilisation<br />
             <input type="submit" id="inscription" value="S'inscrire" />
-          </div>
         </form>
       </div>
     </div>
