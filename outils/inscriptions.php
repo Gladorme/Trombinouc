@@ -5,7 +5,7 @@
     exit();
   }else{
     if($_POST['CGU']=="Yes"){
-  include (__DIR__ .'/../config/bdd.php');
+      include (__DIR__ .'/../config/bdd.php');
 
       $sql = "SELECT pseudo FROM utilisateurs WHERE pseudo = :pseudo";
       $req = $bd->prepare($sql);

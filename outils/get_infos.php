@@ -11,10 +11,6 @@ function get_nbr_amis($pseudo){
   return count($result);
 }
 
-function get_nbr_favoris($pseudo){
-  return 0;
-}
-
 function get_age($pseudo){
   include (__DIR__ .'/../config/bdd.php');
   $sql = "SELECT naissance FROM utilisateurs WHERE pseudo = :pseudo";
@@ -29,7 +25,7 @@ function get_age($pseudo){
 
 function get_nbr_publications($pseudo){
   include (__DIR__ .'/../config/bdd.php');
-  $sql = "SELECT utilisateur_id FROM publications, utilisateurs WHERE pseudo = :pseudo AND utilisateur_id = id_utilisateur";
+  $sql = "SELECT utilisateur_id FROM publications, utilisateurs WHERE pseudo = :pseudo AND utilisateur_id = id_utilisateur AND rep_id IS NULL";
   $req = $bd->prepare($sql);
   $marqueurs = array('pseudo' => $pseudo);
   $req->execute($marqueurs);

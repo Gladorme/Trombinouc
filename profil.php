@@ -41,7 +41,6 @@
 	<?php
 	$img = load_img($_GET['pseudo']);
 	$nbr_amis = get_nbr_amis($_GET['pseudo']);
-	$fav = get_nbr_favoris($_GET['pseudo']);
 	$age = get_age($_GET['pseudo']);
 	$publi = get_nbr_publications($_GET['pseudo']);
 	if ($_GET['pseudo'] != $_SESSION['pseudo']){
@@ -62,7 +61,6 @@
 	<div class='stats'>
 		<ul>
 			<li><i class='fa fa-users' aria-hidden='true'></i> {$nbr_amis} Amis</li>
-			<li><i class='fa fa-star' aria-hidden='true'></i> {$fav} Favoris</li>
 			<li><i class='fa fa-birthday-cake' aria-hidden='true'></i> {$age} ans</li>
 			<li><i class='fa fa-comments-o' aria-hidden='true'></i> {$publi} publications</li>
 			{$action}

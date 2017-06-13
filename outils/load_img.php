@@ -8,10 +8,6 @@
     $result = $req->fetchall();
     $req->closeCursor();
 
-    if (isset($result[0]['img'])){
-        return $result[0]['img'];
-    }else{
-      return 'img/logo.png';
-    }
+    return $result[0]['img'];
   }
  ?>

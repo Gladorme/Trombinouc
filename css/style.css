@@ -197,6 +197,12 @@ nav li:hover {
 .auteur p {
   text-align: center;
   font-weight: bold;
+  color: #6666ff;
+}
+.utilisateur p {
+  text-align: center;
+  font-weight: bold;
+  color: #6666ff;
 }
 .auteur a:link {
   text-decoration: none;
@@ -313,6 +319,22 @@ nav li:hover {
   display: inline-block;
   text-align: center;
   text-decoration: none;
+}
+.options form {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0px 20px 20px 20px;
+  text-align: center;
+  width: 60%;
+  border: #51E7BA 5px solid;
+  border-radius: 10px;
+}
+.options label {
+  font-weight: bold;
+}
+.options input {
+  margin-bottom: 7px;
 }
 footer {
   margin-top: 15px;
